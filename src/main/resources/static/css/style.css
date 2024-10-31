@@ -1,0 +1,256 @@
+/*=== GERAL ========================================*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--hue: 201;
+	--primary-color: hsl(var(--hue), 100%, 26%);
+	--headline: hsl(210, 11%, 15%);
+	--paragraph: hsl(210, 9%, 31%);
+	--bg-light: hsl(180, 14%, 97%);
+	--shadow-color: #CCC;
+	font-size: 62.5%;
+	/* 1rem = 10px */
+	--nav-height: 7.2rem;
+}
+
+html {
+	/* chrome://flags/#smooth-scrolling */
+	scroll-behavior: smooth;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	min-height: 100vh;
+	font-family: 'DM Sans';
+	font-size: 1.6rem;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	text-align: center;
+	/* overflow: overlay;*/
+	background-color: var(--bg-light);
+}
+
+header {
+	background-color: var(--primary-color);
+	height: 7rem;
+	line-height: 7rem;
+	text-align: center;
+	box-shadow: 0 2px 3px var(--shadow-color);
+	/* display: flex;
+	justify-content: space-between;
+	padding: 100px 100px 10px 10px; */
+	
+}
+
+.header-title {
+	color: black;
+	font-size: 2rem;
+}
+
+main {
+	display: grid;
+/*flx-grow: 1;
+	flex-direction: column;*/
+	justify-items: center;
+	align-items: center;
+	width: 90%;
+	margin: 5vh auto;
+	padding: 5rem;
+	box-shadow: 2px 2px 10px var(--shadow-color);
+	gap: 2rem;
+}
+
+footer {
+	width: 100;
+	text-align: center;
+	font-weight: 200;
+	font-style: italic;
+	padding: 2rem;
+}
+
+.container {
+	display:grid;
+	align-items: center;
+	justify-items: center;
+}
+
+/*ontainer .col {
+	align-items: flex-start;
+}  */
+
+/****************************Tabela****************************/
+.table {
+	background-color: transparent; 
+	width: 100%;
+	/* user-select: none; */
+	text-align: left;
+	margin: 2rem;
+}
+
+.table tr {
+	width: 100%;
+}
+
+.table th {
+	height: 5rem;
+	padding-left: 2rem;
+	font-size: 1.2rem;
+}
+
+.table td {
+	height: 5rem;
+	padding-left: 2rem;
+}
+/*
+.table th:last-child, 
+.table td:last-child{
+	padding: 0;
+	min-width: 14rem;
+	text-align: center;
+}
+*/
+/* .table tr:hover{
+	background-color: var(--bg-light);
+} */
+/****************************************IMPRESSORA******************************************/
+.print {
+			display: none;
+			margin: 8px;
+			padding: 15px;
+			/* border: 1px solid black;
+			border-radius: 30px; */
+			width: 720px;
+		}
+		
+		.print h1 {
+			border-bottom: 1px solid black;
+			margin-bottom: 20px;
+		}
+		
+		.print h2 {
+			padding: 10px;
+			border: 1px solid black;
+			border-radius: 20px;
+			display: inline-block;
+			margin-left: 10px;
+		}
+		
+		.assinatura {
+			border-top: 1px solid black;
+			text-align: center;
+		}
+		
+		@media print {
+			.print {
+				display: block;
+			}
+			
+			main {
+				display: none;
+			}
+			
+			header {
+				display: none;
+			}
+			
+			footer {
+				display: none;
+				}
+		}
+
+/* @media ( max-width :480px) {
+	header {
+		position: fixed;
+		width: 100%;
+	}
+	.header-title {
+		font-size: 1.5rem;
+	}
+	main {
+		padding: 0;
+		margin: 20px 0 0 0;
+		width: 100%;
+		box-shadow: none;
+	}
+	.table {
+		border-spacing:5px;
+	}
+	.table thead{
+		display: none;
+	}
+} */
+
+@media (min-width:588px) and (max-width :990px) {
+	main{
+		/* background: black; */
+		padding: 10px;
+		/* margin: 0; */
+	}
+	
+	#tela1{
+		padding: 0;
+		margin: 0;
+		width: 1100px;
+	}
+	
+	#tela1 .row{
+		padding:0;
+		margin: 0;
+		max-width: 100%;
+		max-height: 700px; 
+		overflow: scroll;
+		font-size: 10px;
+		}
+		
+	#tabelaresultadostodos {
+		width: 100px;
+		padding:0;
+		margin:0;
+		/* background: black; */
+	}
+	
+	/* table thead th {
+	margin:0;
+	padding: 0; 
+	background: black;
+	}
+	
+	table tbody tr td {
+	margin:0;
+	padding: 0;
+	background: black;
+	} */
+}
+
+@media (max-width :588px) {
+	main {
+	/* background: yellow; */
+	font-size: 8px;
+	padding: 10px;
+	}
+	#tela1{
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		max-width: 100%; 
+		overflow: scroll;
+	}
+	
+	form {
+	display: flex;
+	flex-direction: column;
+	/* background: black; */
+	margin:0;
+	padding: 0;
+	}
+	
+}
